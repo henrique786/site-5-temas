@@ -1,0 +1,287 @@
+body:has(#t-natal:checked) {
+  --fundo: #fdf3e7;
+  --superficie: #ffffff;
+  --texto: #3a1015;
+  --suave: #7a4a4f;
+  --destaque: #c4122f;
+  --sobre-destaque: #ffffff;
+  --borda: 2px solid #1f6b3a;
+  --raio: 14px;
+  --sombra: 0 8px 20px rgba(196, 18, 47, .18);
+  --fonte-titulo: "Mountains of Christmas", Georgia, serif;
+  --fonte-texto: "Nunito", "Segoe UI", sans-serif;
+  --peso-titulo: 700;
+  --escala-titulo: 1.15;
+  --textura:
+    radial-gradient(circle, #e3edf0 0 2px, transparent 2.5px) 0 0 / 34px 34px,
+    radial-gradient(circle, #e3edf0 0 1.5px, transparent 2px) 17px 17px / 34px 34px;
+}
+ 
+/* 🎃 HALLOWEEN: roxo escuro, laranja abóbora */
+body:has(#t-halloween:checked) {
+  --fundo: #14091f;
+  --superficie: #231233;
+  --texto: #f6e9d8;
+  --suave: #bba4cb;
+  --destaque: #ff7a00;
+  --sobre-destaque: #14091f;
+  --borda: 2px solid #4b2670;
+  --raio: 10px;
+  --sombra: 0 0 22px rgba(255, 122, 0, .25);
+  --fonte-titulo: "Creepster", Impact, sans-serif;
+  --fonte-texto: "Special Elite", "Courier New", monospace;
+  --peso-titulo: 400;
+  --escala-titulo: 1.15;
+  --textura: radial-gradient(circle at 85% 0%, rgba(255, 122, 0, .2), transparent 45%);
+}
+ 
+/* 🚀 FUTURISTA: branco gelo, azul elétrico, grade técnica */
+body:has(#t-futurista:checked) {
+  --fundo: #eef3fb;
+  --superficie: #ffffff;
+  --texto: #0a1630;
+  --suave: #566890;
+  --destaque: #2f6bff;
+  --sobre-destaque: #ffffff;
+  --borda: 1px solid #c5d3ee;
+  --raio: 6px;
+  --sombra: 0 12px 32px rgba(47, 107, 255, .18);
+  --fonte-titulo: "Orbitron", "Segoe UI", sans-serif;
+  --fonte-texto: "Exo 2", "Segoe UI", sans-serif;
+  --peso-titulo: 700;
+  --escala-titulo: .85;
+  --caixa: uppercase;
+  --textura:
+    linear-gradient(rgba(47, 107, 255, .07) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, rgba(47, 107, 255, .07) 1px, transparent 1px) 0 0 / 40px 40px;
+}
+ 
+/* 🌃 CYBERPUNK: noite, amarelo ácido, rosa e ciano neon */
+body:has(#t-cyberpunk:checked) {
+  --fundo: #0a0a12;
+  --superficie: #14141f;
+  --texto: #f3f3ff;
+  --suave: #7fd8e6;
+  --destaque: #fcee09;
+  --sobre-destaque: #0a0a12;
+  --borda: 2px solid #ff2a6d;
+  --raio: 0;
+  --sombra: 5px 5px 0 #05d9e8;
+  --fonte-titulo: "Rajdhani", "Arial Narrow", sans-serif;
+  --fonte-texto: "Share Tech Mono", "Courier New", monospace;
+  --peso-titulo: 700;
+  --escala-titulo: 1.1;
+  --caixa: uppercase;
+  --textura: repeating-linear-gradient(0deg, rgba(255, 255, 255, .035) 0 1px, transparent 1px 4px);
+}
+ 
+/* ⛏️ MINECRAFT: terra, pedra e grama, tudo em blocos */
+body:has(#t-minecraft:checked) {
+  --fundo: #2d2418;
+  --superficie: #3a3a3a;
+  --texto: #f2f2f2;
+  --suave: #c8c8c8;
+  --destaque: #6fbf3a;
+  --sobre-destaque: #10230a;
+  --borda: 4px solid #151515;
+  --raio: 0;
+  --sombra: inset 4px 4px 0 #5b5b5b, inset -4px -4px 0 #232323, 6px 6px 0 rgba(0, 0, 0, .45);
+  --fonte-titulo: "Press Start 2P", "Courier New", monospace;
+  --fonte-texto: "VT323", "Courier New", monospace;
+  --peso-titulo: 400;
+  --escala-titulo: .65;
+  --altura-titulo: 1.6;
+  --tam-texto: 1.5rem;
+  --textura: repeating-conic-gradient(#2d2418 0% 25%, #35291b 0% 50%) 50% 50% / 48px 48px;
+}
+ 
+/* ============================================================
+   BASE
+   ============================================================ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+ 
+body {
+  margin: 0;
+  background: var(--textura, none), var(--fundo);
+  background-attachment: fixed;
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: var(--tam-texto, 1.1rem);
+  line-height: 1.6;
+  transition: background-color .3s, color .3s;
+}
+ 
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: var(--peso-titulo);
+  line-height: var(--altura-titulo, 1.15);
+  text-transform: var(--caixa, none);
+  margin: 0 0 .6em;
+}
+ 
+h1 { font-size: calc(clamp(2.4rem, 8vw, 4.5rem) * var(--escala-titulo, 1)); }
+h2 { font-size: calc(clamp(1.5rem, 4vw, 2.1rem) * var(--escala-titulo, 1)); }
+h3 { font-size: calc(1.3rem * var(--escala-titulo, 1)); }
+ 
+p { margin: 0 0 1em; }
+ 
+code {
+  font-family: "DM Mono", Consolas, monospace;
+  font-size: .9em;
+  background: var(--fundo);
+  border: var(--borda);
+  border-width: 1px;
+  border-radius: calc(var(--raio) / 4);
+  padding: .05em .4em;
+}
+ 
+main,
+.topo,
+.rodape {
+  width: min(100% - 2rem, 62rem);
+  margin-inline: auto;
+}
+ 
+/* ============================================================
+   SELETOR DE TEMAS
+   ============================================================ */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: .75rem 0;
+  background: var(--fundo);
+}
+ 
+.seletor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+ 
+.seletor legend {
+  float: left;
+  margin-right: .75rem;
+  padding: 0;
+  font-weight: 700;
+}
+ 
+/* esconde o botão de rádio, mas deixa o teclado funcionar */
+.seletor input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+ 
+.seletor label {
+  cursor: pointer;
+  padding: .35rem 1rem;
+  background: var(--superficie);
+  color: var(--texto);
+  border: var(--borda);
+  border-radius: calc(var(--raio) * 2);
+  font-family: var(--fonte-titulo);
+  font-size: calc(1rem * var(--escala-titulo, 1));
+  transition: background-color .2s, color .2s;
+}
+ 
+.seletor label:hover { border-color: var(--destaque); }
+ 
+.seletor input:checked + label {
+  background: var(--destaque);
+  color: var(--sobre-destaque);
+  border-color: var(--destaque);
+}
+ 
+.seletor input:focus-visible + label {
+  outline: 3px solid var(--destaque);
+  outline-offset: 3px;
+}
+ 
+/* ============================================================
+   SEÇÕES
+   ============================================================ */
+.hero {
+  padding: 3rem 0 2.5rem;
+}
+ 
+.lead {
+  max-width: 36rem;
+  font-size: calc(var(--tam-texto, 1.1rem) * 1.2);
+  color: var(--suave);
+}
+ 
+main > section { margin-bottom: 3.5rem; }
+ 
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+}
+ 
+.cartoes > h2 { grid-column: 1 / -1; margin-bottom: 0; }
+ 
+.cartao {
+  padding: 1.5rem;
+  background: var(--superficie);
+  border: var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+ 
+.cartao p { margin: 0; color: var(--suave); }
+ 
+/* Tabela */
+.rolagem {
+  overflow-x: auto;
+  background: var(--superficie);
+  border: var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+ 
+table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  text-align: left;
+}
+ 
+th, td { padding: .85rem 1.1rem; }
+ 
+th {
+  background: var(--destaque);
+  color: var(--sobre-destaque);
+  font-family: var(--fonte-titulo);
+  font-weight: var(--peso-titulo);
+  font-size: calc(1rem * var(--escala-titulo, 1));
+  text-transform: var(--caixa, none);
+}
+ 
+tbody tr + tr td { border-top: 1px solid var(--fundo); }
+ 
+/* Desafio */
+.desafio ol {
+  margin: 0;
+  padding: 1.5rem 1.5rem 1.5rem 3rem;
+  background: var(--superficie);
+  border: var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+ 
+.desafio li + li { margin-top: .6rem; }
+.desafio li::marker { color: var(--destaque); font-weight: 700; }
+ 
+/* Rodapé */
+.rodape {
+  padding: 1.5rem 0 3rem;
+  color: var(--suave);
+  font-size: .95rem;
+}
